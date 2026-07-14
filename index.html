@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demonstration</title>
+    
+    <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        // Console method: Info logging
+        console.info("Internal script loaded successfully.");
+
+        // Static user data object
+        const userData = {
+            name: "Alex",
+            role: "Developer",
+            status: "Active"
+        };
+
+        // Function to display the welcome message
+        function displayWelcome() {
+            const container = document.getElementById("welcome-container");
+            container.innerHTML = `<h2>Welcome back, ${userData.name}!</h2><p>Role: ${userData.role}</p>`;
+            
+            // Console method: Table display
+            console.table(userData);
+        }
+
+        // Run the function once the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", displayWelcome);
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Implementation Types</h1>
+    
+    <!-- Container where internal JS injects content -->
+    <div id="welcome-container"></div>
+
+    <!-- INLINE JAVASCRIPT -->
+    <!-- Triggered directly by the user clicking the button -->
+    <button onclick="console.log('Inline JS: Button was clicked!'); alert('Hello from inline JavaScript!');">
+        Click Me (Inline JS)
+    </button>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <!-- Links to the separate script.js file -->
+    <script src="script.js"></script>
+</body>
+</html>
